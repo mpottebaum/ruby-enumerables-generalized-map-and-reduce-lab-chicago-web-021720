@@ -13,8 +13,8 @@ def reduce(array, starting_point = 0)
   total_or_true = starting_point
   index = 0
   while index < array.length do
-    yield(array[index], total_or_true)
+    total_or_true = yield(array[index], total_or_true)
     index += 1
   end
-  total
+  total_or_true
 end
