@@ -14,6 +14,9 @@ def reduce(array, starting_point = 0)
   index = 0
   while index < array.length do
     total_or_true = yield(array[index], total_or_true)
+    if total_or_true == nil
+      total_or_true = false
+    end
     index += 1
   end
   total_or_true
